@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<input type="text" id="searchInput" placeholder="Search...">
+
+<table id="donorTable">
+<tr><th>Name</th><th>Blood</th><th>Action</th></tr>
+
+{% for d in donors %}
+<tr>
+<td>{{ d.name }}</td>
+<td>{{ d.blood_group }}</td>
+<td>
+{% if session.role=='Admin' %}
+<a href="/edit_donor/{{ d.donor_id }}">Edit</a>
+<a href="/delete_donor/{{ d.donor_id }}" onclick="return confirmDelete()">Delete</a>
+{% else %}
+No Access
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/download_report">Download Report</a>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="title">Issue Blood Requests</h2>
+
+<table>
+    <tr>
+        <th>Request ID</th>
+        <th>Requester Name</th>
+        <th>Blood Group</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for r in requests %}
+    <tr>
+        <td>{{ r.request_id }}</td>
+        <td>{{ r.requester_name }}</td>
+        <td>{{ r.blood_group }}</td>
+        <td>{{ r.quantity }}</td>
+        <td>{{ r.request_date }}</td>
+        <td>{{ r.status }}</td>
+
+        <td>
+            {% if r.status == 'Pending' %}
+                <a href="/issue/{{ r.request_id }}">✅ Issue</a> |
+                <a href="/reject/{{ r.request_id }}">❌ Reject</a>
+            {% else %}
+                -
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

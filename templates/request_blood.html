@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="title">Request Blood</h2>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <div class="{{ category }}">
+        {{ msg }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<div class="box">
+    <form method="POST">
+
+        <label>Requester Name:</label>
+        <input type="text" name="requester_name" required>
+
+        <label>Blood Group:</label>
+        <select name="blood_group" required>
+            <option value="">Select</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <label>Quantity (Units):</label>
+        <input type="number" name="quantity" required>
+
+        <label>Request Date:</label>
+        <input type="date" name="request_date" required>
+
+        <br>
+        <input type="submit" value="Submit Request">
+
+    </form>
+</div>
+
+{% endblock %}

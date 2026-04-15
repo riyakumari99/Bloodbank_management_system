@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST">
+<input name="name" value="{{ donor.name }}">
+<input name="age" value="{{ donor.age }}">
+<input name="gender" value="{{ donor.gender }}">
+<input name="blood_group" value="{{ donor.blood_group }}">
+<input name="contact" value="{{ donor.contact }}">
+<button>Update</button>
+</form>
+
+{% endblock %}

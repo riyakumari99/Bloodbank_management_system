@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/donor.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<h2 class="title">🩸 Add Donor</h2>
+
+<form method="POST" class="donor-form">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Age:</label>
+    <input type="number" name="age" required>
+
+    <label>Gender:</label>
+    <select name="gender" id="gender" onchange="showGenderFields()" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label>Blood Group:</label>
+    <input type="text" name="blood_group" placeholder="A+, O-, etc." required>
+
+    <label>Contact:</label>
+    <input type="text" name="contact" required>
+
+    <label>Donation Date:</label>
+    <input type="date" name="donation_date" required>
+
+    <!-- Male / Other Eligibility -->
+    <div id="male_fields" class="eligibility-fields" style="display:none;">
+        <label>Weight ≥ 50kg?</label>
+        <select name="weight">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <label>Any serious disease (HIV, Hepatitis)?</label>
+        <select name="disease">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+
+        <label>Recent surgery/tattoo (6 months)?</label>
+        <select name="surgery">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+    </div>
+
+    <!-- Female Eligibility -->
+ 
+<div id="female_fields" class="eligibility-fields" style="display:none;">
+    <label>Pregnant or breastfeeding?</label>
+    <select name="pregnant">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select>
+
+    <label>Menstruating currently?</label>
+    <select name="menstruating">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select>
+
+    <label>Weight ≥ 45kg?</label>
+    <select name="female_weight">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label>Any serious disease (HIV, Hepatitis)?</label>
+    <select name="female_disease">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select>
+
+    <label>Recent surgery/tattoo (6 months)?</label>
+    <select name="female_surgery">
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+    </select>
+</div>
+
+    <button type="submit">Add Donor</button>
+</form>
+
+<script>
+function showGenderFields(){
+    var gender = document.getElementById('gender').value;
+    document.getElementById('male_fields').style.display = (gender=="Male" || gender=="Other") ? "block" : "none";
+    document.getElementById('female_fields').style.display = (gender=="Female") ? "block" : "none";
+}
+</script>
+
+{% endblock %}

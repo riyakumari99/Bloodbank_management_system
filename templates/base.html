@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Bank System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+{% if session.username %}
+<div class="nav">
+    <span>Welcome {{ session.username }} ({{ session.role }})</span>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/donor_register">Add Donor</a>
+    <a href="/donor_history">History</a>
+    <a href="/logout">Logout</a>
+</div>
+{% endif %}
+
+<!-- Flash messages -->
+<div class="flash-messages">
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+        <div class="alert {{ category }}">{{ message }}</div>
+    {% endfor %}
+{% endwith %}
+</div>
+
+<div class="container">
+{% block content %}{% endblock %}
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

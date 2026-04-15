@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="title">🩸 Blood Bank Dashboard</h2>
+
+<!-- Blood Stock Cards -->
+<div class="card-container">
+    {% for s in stock %}
+    <div class="card">
+        <h3>{{ s.blood_group }}</h3>
+        <p>{{ s.quantity }} Units</p>
+    </div>
+    {% endfor %}
+</div>
+
+<br>
+
+<!-- Quick Actions -->
+<div class="actions">
+    <a href="/donor_register"><button>Add Donor</button></a>
+    <a href="/donor_history"><button>View Donors</button></a>
+    <a href="/request_blood"><button>Request Blood</button></a>
+    <a href="/issue_blood"><button>Issue Blood</button></a>
+    <a href="/download_report"><button>Download Report</button></a>
+</div>
+
+{% endblock %}
+
+<label>Weight ≥ 50kg?</label>
+<select name="weight">
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
+
+<label>Any serious disease (HIV, Hepatitis)?</label>
+<select name="disease">
+  <option value="no">No</option>
+  <option value="yes">Yes</option>
+</select>
+
+<label>Recent surgery/tattoo (6 months)?</label>
+<select name="surgery">
+  <option value="no">No</option>
+  <option value="yes">Yes</option>
+</select>

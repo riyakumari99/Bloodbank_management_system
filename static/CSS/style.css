@@ -1,0 +1,169 @@
+
+/* Body */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f5f5f5, #ffeaea);
+    margin: 0;
+}
+
+/* Navbar */
+.nav {
+    background: linear-gradient(45deg, #b71c1c, #d32f2f);
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #ffdada;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    color: #b71c1c;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+/* Forms */
+.box {
+    width: 350px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.02);
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #b71c1c;
+    outline: none;
+}
+
+/* Buttons */
+button, input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(45deg, #b71c1c, #e53935);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover, input[type="submit"]:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #8e0000, #c62828);
+}
+
+/* Table */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #b71c1c;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #fff3f3;
+}
+
+/* Flash messages */
+.success {
+    width: 50%;
+    margin: 15px auto;
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.error {
+    width: 50%;
+    margin: 15px auto;
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Search */
+#searchInput {
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Dashboard Cards */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin: 20px;
+}
+
+.card {
+    background: linear-gradient(45deg, #e03636, #4c0707);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
+}
+
+.card:hover {
+    transform: scale(1.08);
+}

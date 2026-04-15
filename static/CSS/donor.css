@@ -1,0 +1,57 @@
+/* Add Donor Page Style */
+
+.donor-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.donor-form h2 {
+    text-align: center;
+    color: #dc3545;
+    margin-bottom: 20px;
+}
+
+.donor-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.donor-form input,
+.donor-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.donor-form button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.donor-form button:hover {
+    background-color: #c82333;
+}
+
+.eligibility-fields {
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #f0f0f0;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
